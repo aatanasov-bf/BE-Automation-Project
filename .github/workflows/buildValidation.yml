@@ -34,10 +34,14 @@ jobs:
  
       - name: Restore dependencies
 
-        run: dotnet restore \BE-Automation-Project\BackEndAutomation\BackEndAutomation\BackEndAutomation.csproj
+        run: |
+          cd .\BackEndAutomation\
+          dotnet restore
  
       - name: Build project
 
-        run: dotnet build \BE-Automation-Project\BackEndAutomation\BackEndAutomation\BackEndAutomation.csproj --no-restore --configuration Release
+        run: |
+          cd .\BackEndAutomation\
+          dotnet build --no-restore --configuration Release
 
  
