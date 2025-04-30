@@ -50,6 +50,7 @@ namespace BackEndAutomation.Rest.Calls
 
             return response;
         }
+
         public RestResponse CreateUserCall(string baseUrl, string username, string password, string role, string token)
         {
             string endpoint = $"users/create?username={username}&password={password}&role={role}";
@@ -110,7 +111,7 @@ namespace BackEndAutomation.Rest.Calls
         public RestResponse ConnectParentToStudentCall(string baseUrl, string parent_username,string student_id, string token)
         {
             string endpoint = $"users/connect_parent?parent_username={parent_username}&student_id={student_id}";
-            RestResponse response = this.generalRestCall(baseUrl, endpoint, Method.Get, token);
+            RestResponse response = this.generalRestCall(baseUrl, endpoint, Method.Put, token);
 
             return response;
         }

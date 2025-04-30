@@ -1,6 +1,4 @@
 ﻿using BackEndAutomation.Utilities;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using Reqnroll;
 using System.Collections;
 
@@ -11,7 +9,6 @@ namespace BackEndAutomation
     {
 
         private readonly ScenarioContext _scenarioContext;
-        private IWebDriver _driver;
 
         public Hooks(ScenarioContext scenarioContext)
         {

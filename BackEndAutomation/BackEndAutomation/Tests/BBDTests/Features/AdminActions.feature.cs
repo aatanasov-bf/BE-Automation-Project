@@ -104,7 +104,7 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync("I login with admin1 and admin123", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("I enter user detils \"test_nasko_admin\" \"admin1234\" \"admin\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter user details \"test_nasko_admin\" \"admin1234\" \"admin\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 9
  await testRunner.AndAsync("I create the user", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -246,6 +246,108 @@ this.ScenarioInitialize(scenarioInfo);
 #line 34
  await testRunner.ThenAsync("I get message \"moderator \'test_nasko_moderator\' created successfully\" and the use" +
                         "r is created", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Admin connects existing parent to existing student")]
+        public async System.Threading.Tasks.Task AdminConnectsExistingParentToExistingStudent()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Admin connects existing parent to existing student", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 37
+ await testRunner.GivenAsync("I login with admin1 and admin123", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 38
+ await testRunner.WhenAsync("I enter parent student pair details \"test_nasko_parent_grades\" \"a892f5cb-0040-4e6" +
+                        "b-841b-65520e72bf49\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 39
+ await testRunner.AndAsync("I pair the parent and the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 40
+ await testRunner.ThenAsync("I get message \"Parent linked to student\" and the pair is connected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Admin connects non existing parent to student")]
+        public async System.Threading.Tasks.Task AdminConnectsNonExistingParentToStudent()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Admin connects non existing parent to student", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 43
+ await testRunner.GivenAsync("I login with admin1 and admin123", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 44
+ await testRunner.WhenAsync("I enter parent student pair details \"test_nasko_parent_gradesasdas\" \"a892f5cb-004" +
+                        "0-4e6b-841b-65520e72bf49\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 45
+ await testRunner.AndAsync("I pair the parent and the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 46
+ await testRunner.ThenAsync("I get message \"Parent not found\" and the pair is connected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Admin connects existing parent to no existing student")]
+        public async System.Threading.Tasks.Task AdminConnectsExistingParentToNoExistingStudent()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Admin connects existing parent to no existing student", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 49
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 50
+ await testRunner.GivenAsync("I login with admin1 and admin123", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 51
+ await testRunner.WhenAsync("I enter parent student pair details \"test_nasko_parent_grades\" \"sdasdasdasdassda\"" +
+                        "", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 52
+ await testRunner.AndAsync("I pair the parent and the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 53
+ await testRunner.ThenAsync("I get message \"Parent linked to student\" and the pair is connected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
