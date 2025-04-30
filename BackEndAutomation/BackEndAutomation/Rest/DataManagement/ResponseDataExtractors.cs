@@ -5,10 +5,10 @@ namespace BackEndAutomation.Rest.DataManagement
     public class ResponseDataExtractors
     {
 
-        public string ExtractLoggedInUserToken(string jsonResponse, string jsonIdentfier = "token")
+        public string ExtractLoggedInUserToken(string jsonResponse, string tokenType = "token")
         {
             JObject jsonObject = JObject.Parse(jsonResponse);
-            return jsonObject[jsonIdentfier]?.ToString();
+            return jsonObject[tokenType]?.ToString();
         }
 
         public int ExtractUserId(string jsonResponse)
@@ -17,11 +17,10 @@ namespace BackEndAutomation.Rest.DataManagement
             return jsonObject["user"]?["id"]?.Value<int>() ?? 0;
         }
 
-        public string ExtractStockMessage(string jsonResponse)
+        public string ExtractResponseMessage(string jsonResponse, string messageProperty = "message")
         {
             JObject jsonObject = JObject.Parse(jsonResponse);
-            return jsonObject["message"]?.ToString();
-
+            return jsonObject[messageProperty]?.ToString();
         }
     }
 }
