@@ -52,3 +52,5 @@ $RECYCLE.BIN/
 *.bak
 *.swp
 ~*
+/BackEndAutomation/BackEndAutomation/obj/Debug/net8.0/BackEndAutomation.AssemblyInfoInputs.cache
+/BackEndAutomation/BackEndAutomation/obj/Debug/net8.0/BackEndAutomation.AssemblyInfo.cs
