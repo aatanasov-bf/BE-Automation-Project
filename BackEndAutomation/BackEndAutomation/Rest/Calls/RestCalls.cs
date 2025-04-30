@@ -19,6 +19,21 @@ namespace BackEndAutomation.Rest.Calls
             return response;
         }
 
+        public RestResponse generalRestCall(string baseUrl, string endpoint, Method method, string token)
+        {
+
+            RestClientOptions options = new RestClientOptions(baseUrl)
+            {
+                Timeout = TimeSpan.FromSeconds(120),
+            };
+            RestClient client = new RestClient(options);
+            RestRequest request = new RestRequest(endpoint, method);
+            request.AddHeader("Authorization", token);
+            RestResponse response = client.Execute(request);
+
+            return response;
+        }
+
         public RestResponse LoginCall(string baseUrl, string username, string password)
         {
             RestClientOptions options = new RestClientOptions(baseUrl)
@@ -132,6 +147,24 @@ namespace BackEndAutomation.Rest.Calls
             return response;
         }
 
+        public RestResponse ViewGradesCall(string baseUrl, string student_id, string token)
+        {
+            string endpoint = $"grades/student/{student_id}";
+            /*RestClientOptions options = new RestClientOptions(baseUrl)
+            {
+                Timeout = TimeSpan.FromSeconds(120),
+            };
 
+            RestClient client = new RestClient(options);
+            string endpoint = $"grades/student/{student_id}";
+            RestRequest request = new RestRequest(baseUrl + endpoint, Method.Get);
+            request.AddHeader("Authorization", token);
+            RestResponse response = client.Execute(request);*/
+
+            RestResponse response = this.generalRestCall(baseUrl, endpoint, Method.Get, token);
+
+          
+            return response;
+        }
     }
 }

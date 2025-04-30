@@ -82,14 +82,14 @@ namespace BackEndAutomation.Tests.BBDTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("[scenario name]")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
-        public async System.Threading.Tasks.Task ScenarioName()
+        [NUnit.Framework.DescriptionAttribute("Parent views his child\'s grades")]
+        [NUnit.Framework.CategoryAttribute("ParentActions")]
+        public async System.Threading.Tasks.Task ParentViewsHisChildsGrades()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "ParentActions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Parent views his child\'s grades", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -101,13 +101,50 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
- await testRunner.GivenAsync("[context]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I login with test_nasko_parent_grades and parent1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("[action]", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter child\'s details \"99ca22e2-0fdc-4d2a-aec0-46177543f2dc\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 9
- await testRunner.ThenAsync("[outcome]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("I open the grades", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 10
+ await testRunner.ThenAsync("I get message \"\" and the grades are shown.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Parent doesn\'r views other children\'s grades")]
+        public async System.Threading.Tasks.Task ParentDoesnrViewsOtherChildrensGrades()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Parent doesn\'r views other children\'s grades", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 13
+ await testRunner.GivenAsync("I login with test_nasko_parent and parent1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 14
+ await testRunner.WhenAsync("I enter child\'s details \"99ca22e2-0fdc-4d2a-aec0-46177543f2dc\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 15
+ await testRunner.AndAsync("I open the grades", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 16
+ await testRunner.ThenAsync("I get message \"You can\'t view this student\'s grades\" and the grades are not shown" +
+                        ".", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

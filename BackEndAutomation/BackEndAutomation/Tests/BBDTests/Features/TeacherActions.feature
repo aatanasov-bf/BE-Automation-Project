@@ -5,7 +5,7 @@ A short summary of the feature
 @TeacherActions
 Scenario: Teacher creates class
 	Given I login with test_nasko_teacher and teacher1234
-	When I enter class details "class_name" "subject1" "subject2" "subject3"
+	When I enter class details "class_nasko_name" "test_nasko_sub_1" "test_nasko_sub_2" "test_nasko_sub_3"
 	And I create the class
 	Then I get message "Class created" and the class is created
 	And I get the class identifier

@@ -101,10 +101,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
- await testRunner.GivenAsync("I login with \"test_nasko_teacher\" and \"teacher1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I login with test_nasko_teacher and teacher1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("I enter student move details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter student move details \"b6bc6146-19de-42b3-a7cd-a6c9146c4fb9\" \"25789a09-403" +
+                        "3-4738-aed3-d7b74e4b0f0b\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 9
  await testRunner.AndAsync("I move the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -134,16 +135,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 13
- await testRunner.GivenAsync("I login with \"test_nasko_teacher\" and \"teacher1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I login with test_nasko_teacher and teacher1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 14
- await testRunner.WhenAsync("I enter delete class details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter delete class details \"25789a09-4033-4738-aed3-d7b74e4b0f0b\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 15
  await testRunner.AndAsync("I delete the class", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 16
- await testRunner.ThenAsync("I get message \"Only moderators can delete clases\" and the student is not moved.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I get message \"Only moderators can delete classes\" and the class is not deleted.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -167,81 +168,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 19
- await testRunner.GivenAsync("I login with \"test_nasko_moderator\" and \"moderator1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I login with test_nasko_moderator and moderator1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 20
- await testRunner.WhenAsync("I enter student move details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter student move details \"b6bc6146-19de-42b3-a7cd-a6c9146c4fb9\" \"25789a09-403" +
+                        "3-4738-aed3-d7b74e4b0f0b\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 21
  await testRunner.AndAsync("I move the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 22
- await testRunner.ThenAsync("I get message \"Student moved\" and the student is moved.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Moderator deletes existing class witho students")]
-        public async System.Threading.Tasks.Task ModeratorDeletesExistingClassWithoStudents()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Moderator deletes existing class witho students", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 24
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 25
- await testRunner.GivenAsync("I login with \"test_nasko_moderator\" and \"moderator1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 26
- await testRunner.WhenAsync("I enter student move details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 27
- await testRunner.AndAsync("I move the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 28
- await testRunner.ThenAsync("I get message \"Student moved\" and the student is moved.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Moderator deletes existing class without students")]
-        public async System.Threading.Tasks.Task ModeratorDeletesExistingClassWithoutStudents()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Moderator deletes existing class without students", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 31
- await testRunner.GivenAsync("I login with \"test_nasko_moderator\" and \"moderator1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 32
- await testRunner.WhenAsync("I enter student move details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 33
- await testRunner.AndAsync("I move the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 34
  await testRunner.ThenAsync("I get message \"Student moved\" and the student is moved.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -255,6 +191,72 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Moderator deletes non existing class", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 25
+ await testRunner.GivenAsync("I login with test_nasko_moderator and moderator1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 26
+ await testRunner.WhenAsync("I enter delete class details \"8fea2b2a-6f8d-44dc-a83f-8bd5de2c696d\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 27
+ await testRunner.AndAsync("I delete the class", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 28
+ await testRunner.ThenAsync("I get message \"Class not found\" and the class is not deleted.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Moderator deletes existing class with students")]
+        public async System.Threading.Tasks.Task ModeratorDeletesExistingClassWithStudents()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Moderator deletes existing class with students", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 30
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 31
+ await testRunner.GivenAsync("I login with test_nasko_moderator and moderator1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 32
+ await testRunner.WhenAsync("I enter delete class details \"8fea2b2a-6f8d-44dc-a83f-8bd5de2c696d\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 33
+ await testRunner.AndAsync("I delete the class", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 34
+ await testRunner.ThenAsync("I get message \"Class not found\" and the class is not deleted.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Moderator deletes existing class without students")]
+        public async System.Threading.Tasks.Task ModeratorDeletesExistingClassWithoutStudents()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Moderator deletes existing class without students", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -266,16 +268,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 37
- await testRunner.GivenAsync("I login with \"test_nasko_moderator\" and \"moderator1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("I login with test_nasko_moderator and moderator1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 38
- await testRunner.WhenAsync("I enter student move details", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter delete class details \"f3ea4c53-5197-4d30-91d7-304b114d026e\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 39
- await testRunner.AndAsync("I move the student", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I delete the class", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 40
- await testRunner.ThenAsync("I get message \"Student moved\" and the student is moved.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I get message \"Class deleted\" and the class is deleted.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
