@@ -1,14 +1,16 @@
-name: BE-Automation_Build_Validation
+name: BE-Automation_Build_Validation_Main
  
 on:
 
   push:
 
-    branches: [ main ]
+    branches:
+    - main
 
   pull_request:
 
-    branches: [ main ]
+    branches:
+    - main
  
 jobs:
 
@@ -22,15 +24,15 @@ jobs:
 
       - name: Checkout code
 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
  
       - name: Setup .NET
 
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v3
 
         with:
 
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0'
  
       - name: Restore dependencies
 
