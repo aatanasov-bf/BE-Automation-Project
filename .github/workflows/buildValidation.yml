@@ -34,10 +34,10 @@ jobs:
  
       - name: Restore dependencies
 
-        run: dotnet restore
+        run: dotnet restore BackEndAutomation.sln
  
       - name: Build project
 
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build BackEndAutomation.sln --no-restore --configuration Release
 
  
