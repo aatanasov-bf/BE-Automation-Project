@@ -104,8 +104,8 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync("I login with test_nasko_teacher and teacher1234", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("I enter class details \"class_nasko_name\" \"test_nasko_sub_1\" \"test_nasko_sub_2\" \"t" +
-                        "est_nasko_sub_3\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I enter class details \"class_nasko_name1\" \"test_nasko_sub_1\" \"test_nasko_sub_2\" \"" +
+                        "test_nasko_sub_3\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 9
  await testRunner.AndAsync("I create the class", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
